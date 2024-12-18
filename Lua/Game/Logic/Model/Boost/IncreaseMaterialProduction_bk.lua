@@ -1,0 +1,34 @@
+-- IncreaseMaterialProduction = Clone(BoostBase)
+-- IncreaseMaterialProduction.__cname = "IncreaseMaterialProduction"
+-- function IncreaseMaterialProduction:OnEnter()
+--     self.materialBoostList = BoostManager.GetBoost(self.cityId).materialBoostList
+--     self.materialBoostList:ForEachKeyValue(
+--         function(itemId, itemBoostFactor)
+--             if self.boostData.params["item_type"] == "all" then
+--                 itemBoostFactor:Add(self.boostData.params.index, self.boostData.params.effect)
+--             elseif
+--                 self.boostData.params["item_type"] == "resource" and
+--                     ConfigManager.GetItemConfig(itemId).resource_type ==
+--                         tonumber(self.boostData.params["resource_type"])
+--              then
+--                 itemBoostFactor:Add(self.boostData.params.index, self.boostData.params.effect)
+--             end
+--         end
+--     )
+-- end
+-- function IncreaseMaterialProduction:OnQuit()
+--     self.materialBoostList:ForEachKeyValue(
+--         function(itemId, itemBoostFactor)
+--             if self.boostData.params["item_type"] == "all" then
+--                 itemBoostFactor:Remove(self.boostData.params.index, self.boostData.params.effect)
+--             elseif
+--                 self.boostData.params["item_type"] == "resource" and
+--                     ConfigManager.GetItemConfig(itemId).resource_type ==
+--                         tonumber(self.boostData.params["resource_type"])
+--              then
+--                 itemBoostFactor:Remove(self.boostData.params.index, self.boostData.params.effect)
+--             end
+--         end
+--     )
+-- end
+-- return IncreaseMaterialProduction

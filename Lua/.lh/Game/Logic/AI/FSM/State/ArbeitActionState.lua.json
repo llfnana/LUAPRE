@@ -1,0 +1,18 @@
+{
+    "sourceFile": "Game/Logic/AI/FSM/State/ArbeitActionState.lua",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1733816849794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1733816849794,
+            "name": "Commit-0",
+            "content": "ArbeitActionState = Clone(FSMState)\nArbeitActionState.__cname = \"ArbeitActionState\"\n--[[ \nArbeitActionState 类是一个状态类，用于管理有限状态机（FSM）中的“劳动”状态。这个类继承自 FSMState，并实现了三个主要方法：OnEnter、OnUpdate 和 OnExit。这些方法分别在状态进入、更新和退出时被调用。\n\n- **OnEnter 方法**：当状态机进入 ArbeitActionState 状态时调用。它执行以下操作：\n    - 显示节点物品：fsm.owner:ShowNodeItem()\n    - 关闭警告视图：fsm.owner:OpenWaringView(false)\n    - 进入生产状态：fsm:ProductionEnter()\n\n- **OnUpdate 方法**：在状态机处于 ArbeitActionState 状态时反复调用。它检查生产更新的状态：\n    - 如果生产更新完成，则调用 self:DoneState(fsm) 结束当前状态。\n\n- **OnExit 方法**：当状态机退出 ArbeitActionState 状态时调用。它执行以下操作：\n    - 退出生产状态：fsm:ProductionQuit()\n    - 隐藏节点物品：fsm.owner:HideNodeItem()\n    - 打开警告视图：fsm.owner:OpenWaringView(true)\n\n总的来说，ArbeitActionState 类管理了进入、更新和退出劳动状态时的行为，确保在每个阶段执行适当的操作。\n]]\nfunction ArbeitActionState:OnEnter(fsm)\n    fsm.owner:ShowNodeItem()\n    fsm.owner:OpenWaringView(false)\n    fsm:ProductionEnter()\nend\n\nfunction ArbeitActionState:OnUpdate(fsm)\n    if fsm:ProductionUpdate() then\n        self:DoneState(fsm)\n    end\nend\n\nfunction ArbeitActionState:OnExit(fsm)\n    fsm:ProductionQuit()\n    fsm.owner:HideNodeItem()\n    fsm.owner:OpenWaringView(true)\nend\n"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+-- IncreaseProtestDuration = Clone(BoostBase)
+-- IncreaseProtestDuration.__cname = "IncreaseProtestDuration"
+-- function IncreaseProtestDuration:OnEnter()
+--     local boostFactor = BoostManager.GetBoost(self.cityId).commonBoostList[CommonBoostType.ProtestDuration]
+--     if boostFactor ~= nil then
+--         boostFactor:Add(self.boostData.params.index, self.boostData.params.effect)
+--     end
+-- end
+-- function IncreaseProtestDuration:OnQuit()
+--     local boostFactor = BoostManager.GetBoost(self.cityId).commonBoostList[CommonBoostType.ProtestDuration]
+--     if boostFactor ~= nil then
+--         boostFactor:Remove(self.boostData.params.index, self.boostData.params.effect)
+--     end
+-- end
+-- return IncreaseProtestDuration

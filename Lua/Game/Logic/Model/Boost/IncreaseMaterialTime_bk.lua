@@ -1,0 +1,34 @@
+-- IncreaseMaterialTime = Clone(BoostBase)
+-- IncreaseMaterialTime.__cname = "IncreaseMaterialTime"
+-- function IncreaseMaterialTime:OnEnter()
+--     self.productTimeBoostList = BoostManager.GetBoost(self.cityId).productTimeBoostList
+--     self.productTimeBoostList:ForEachKeyValue(
+--         function(resource_type, boostFactor)
+--             if self.boostData.params["item_type"] == "all" then
+--                 boostFactor:Add(self.boostData.params.index, self.boostData.params.effect)
+--             elseif
+--                 self.boostData.params["item_type"] == "resource" and
+--                     tonumber(self.boostData.params["resource_type"]) == resource_type
+--              then
+--                 boostFactor:Add(self.boostData.params.index, self.boostData.params.effect)
+--             end
+--         end
+--     )
+--     MapManager.UpdateAllProductData(self.cityId)
+-- end
+-- function IncreaseMaterialTime:OnQuit()
+--     self.productTimeBoostList:ForEachKeyValue(
+--         function(resource_type, boostFactor)
+--             if self.boostData.params["item_type"] == "all" then
+--                 boostFactor:Remove(self.boostData.params.index, self.boostData.params.effect)
+--             elseif
+--                 self.boostData.params["item_type"] == "resource" and
+--                     tonumber(self.boostData.params["resource_type"]) == resource_type
+--              then
+--                 boostFactor:Remove(self.boostData.params.index, self.boostData.params.effect)
+--             end
+--         end
+--     )
+--     MapManager.UpdateAllProductData(self.cityId)
+-- end
+-- return IncreaseMaterialTime

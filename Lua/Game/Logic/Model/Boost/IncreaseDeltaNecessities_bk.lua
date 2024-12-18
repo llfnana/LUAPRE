@@ -1,0 +1,42 @@
+-- IncreaseDeltaNecessities = Clone(BoostBase)
+-- IncreaseDeltaNecessities.__cname = "IncreaseDeltaNecessities"
+-- function IncreaseDeltaNecessities:OnEnter()
+--     self.nessitiesBoostList = BoostManager.GetBoost(self.cityId).nessitiesBoostList
+--     if tonumber(self.boostData.params.isOverTime) == 1 then
+--         self.boostTag = "1"
+--     else
+--         self.boostTag = "0"
+--     end
+--     self.necessitiesTypes = string.split(self.boostData.params.necessities_type, "|")
+--     for i = 1, #self.necessitiesTypes do
+--         if self.necessitiesTypes[i] == "All" then
+--             self.nessitiesBoostList:ForEachKeyValue(
+--                 function(key, boostFactor)
+--                     if string.match(key, self.boostTag) then
+--                         boostFactor:Add(self.boostData.params.index, self.boostData.params.effect)
+--                     end
+--                 end
+--             )
+--         else
+--             local boostFactor = self.nessitiesBoostList[self.necessitiesTypes[i] .. "_" .. self.boostTag]
+--             boostFactor:Add(self.boostData.params.index, self.boostData.params.effect)
+--         end
+--     end
+-- end
+-- function IncreaseDeltaNecessities:OnQuit()
+--     for i = 1, #self.necessitiesTypes do
+--         if self.necessitiesTypes[i] == "All" then
+--             self.nessitiesBoostList:ForEachKeyValue(
+--                 function(key, boostFactor)
+--                     if string.match(key, self.boostTag) then
+--                         boostFactor:Remove(self.boostData.params.index, self.boostData.params.effect)
+--                     end
+--                 end
+--             )
+--         else
+--             local boostFactor = self.nessitiesBoostList[self.necessitiesTypes[i] .. "_" .. self.boostTag]
+--             boostFactor:Remove(self.boostData.params.index, self.boostData.params.effect)
+--         end
+--     end
+-- end
+-- return IncreaseDeltaNecessities

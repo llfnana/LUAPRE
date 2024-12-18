@@ -1,0 +1,23 @@
+-- IncreaseGeneratorEnergy = Clone(BoostBase)
+-- IncreaseGeneratorEnergy.__cname = "IncreaseGeneratorEnergy"
+-- function IncreaseGeneratorEnergy:OnEnter()
+--     local boostFactor = BoostManager.GetBoost(self.cityId).commonBoostList[CommonBoostType.GeneratorEnergy]
+--     local autoOverload = BoostManager.GetBoost(self.cityId).rxBoostList[RxBoostType.AutoGeneratorOverload]
+--     if boostFactor ~= nil then
+--         boostFactor:Add(self.boostData.params.index, self.boostData.params.effect)
+--     end
+--     if autoOverload ~= nil then
+--         autoOverload.value = 1
+--     end
+-- end
+-- function IncreaseGeneratorEnergy:OnQuit()
+--     local boostFactor = BoostManager.GetBoost(self.cityId).commonBoostList[CommonBoostType.GeneratorEnergy]
+--     local autoOverload = BoostManager.GetBoost(self.cityId).rxBoostList[RxBoostType.AutoGeneratorOverload]
+--     if boostFactor ~= nil then
+--         boostFactor:Remove(self.boostData.params.index, self.boostData.params.effect)
+--     end
+--     if autoOverload ~= nil then
+--         autoOverload.value = 0
+--     end
+-- end
+-- return IncreaseGeneratorEnergy

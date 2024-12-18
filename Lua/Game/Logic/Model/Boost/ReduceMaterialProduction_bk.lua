@@ -1,0 +1,23 @@
+-- ReduceMaterialProduction = Clone(BoostBase)
+-- ReduceMaterialProduction.__cname = "ReduceMaterialProduction"
+-- function ReduceMaterialProduction:OnEnter()
+--     self.materialBoostList = BoostManager.GetBoost(self.cityId).materialBoostList
+--     if self.boostData.params["item_type"] == "all" then
+--         self.materialBoostList:ForEach(
+--             function(itemBoostFactor)
+--                 itemBoostFactor:Add(self.boostData.params.index, self.boostData.params.effect)
+--             end
+--         )
+--     end
+-- end
+-- function ReduceMaterialProduction:OnQuit()
+--     if self.boostData.params["item_type"] == "all" then
+--         self.materialBoostList:ForEach(
+--             function(itemBoostFactor)
+--                 itemBoostFactor:Remove(self.boostData.params.index, self.boostData.params.effect)
+--             end
+--         )
+--     end
+-- end
+-- return ReduceMaterialProduction
+-- --暂时不用这个boost
